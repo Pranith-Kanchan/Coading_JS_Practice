@@ -7,6 +7,7 @@ A collection of beginner to intermediate-level JavaScript coding problems with s
 ---
 
 ## 1️⃣ Combine Two Strings Alternately
+```js
 const mixFun = (str1, str2) => {
     str1 = str1.toString();
     str2 = str2.toString();
@@ -26,6 +27,7 @@ console.log(mixFun("abc", "123")); // Output: a1b2c3
 
 
 ## 2️⃣ Find the Second Largest Element in Array
+```js
 const findSecondLargest = (arr) => {
     if (arr.length < 2) return;
 
@@ -47,6 +49,7 @@ console.log(findSecondLargest([1, 2, 3, 4, 5])); // Output: 4
 
 
 ## 3️⃣ Palindrome Check
+```js
 const isPalindrome = (str) => {
     const reversed = str.split('').reverse().join('');
     return str === reversed;
@@ -58,6 +61,7 @@ console.log(isPalindrome("madam"));   // true
 
 
 ## 4️⃣ Flatten a Nested Array
+```js
 const flattenArray = (arr) => {
     let flat = [];
 
@@ -76,6 +80,7 @@ console.log(flattenArray([1, 2, [3, 4, [5, 6]]])); // Output: [1, 2, 3, 4, 5, 6]
 
 
 ## 5️⃣ Reverse a String
+```js
 const reverse = (str) => {
     let res = '';
     for (let i = str.length - 1; i >= 0; i--) {
