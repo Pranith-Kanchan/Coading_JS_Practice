@@ -25,6 +25,7 @@ const mixFun = (str1, str2) => {
 
 console.log(mixFun("abc", "123")); // Output: a1b2c3
 
+```
 
 ## 2️⃣ Find the Second Largest Element in Array
 ```js
@@ -47,6 +48,7 @@ const findSecondLargest = (arr) => {
 
 console.log(findSecondLargest([1, 2, 3, 4, 5])); // Output: 4
 
+```
 
 ## 3️⃣ Palindrome Check
 ```js
@@ -59,6 +61,7 @@ console.log(isPalindrome("racecar")); // true
 console.log(isPalindrome("hello"));   // false
 console.log(isPalindrome("madam"));   // true
 
+```
 
 ## 4️⃣ Flatten a Nested Array
 ```js
@@ -78,6 +81,7 @@ const flattenArray = (arr) => {
 
 console.log(flattenArray([1, 2, [3, 4, [5, 6]]])); // Output: [1, 2, 3, 4, 5, 6]
 
+```
 
 ## 5️⃣ Reverse a String
 ```js
@@ -91,8 +95,10 @@ const reverse = (str) => {
 
 console.log(reverse('hello')); // Output: "olleh"
 
+```
 
 ## 6️⃣ Find Missing Number in Sequence
+```js
 const FindMiss = (num) => {
     const n = num.length + 1;
     const sum = (n * (n + 1)) / 2;
@@ -103,8 +109,9 @@ const FindMiss = (num) => {
 
 console.log(`Missing number: ${FindMiss([1, 2, 3, 5, 6])}`); // Output: 4
 
-
+```
 ## 7️⃣ Word Count (Ignoring Banned Words)
+```js
 const findRepeatedWords = (sentence, banned) => {
     let wordsCount = {};
     let words = sentence.toLowerCase().split(' ');
@@ -123,8 +130,10 @@ const sentence = "This is a test. This test is just a test.";
 const bannedWords = ["is", "a"];
 console.log(findRepeatedWords(sentence, bannedWords));
 
+```
 
 ## 8️⃣ Compare Two Arrays for Equality
+```js
 const findArrayEqual = (num1, num2) => {
     if (num1.length !== num2.length) return false;
 
@@ -137,8 +146,10 @@ const findArrayEqual = (num1, num2) => {
 
 console.log(findArrayEqual([100, 200, 300], [100, 200, 300]) ? 'Array is Equal' : 'Array is Not Equal');
 
+```
 
 ## 9️⃣ Find Two Numbers That Sum to Zero
+```js
 const findSumOfTwo = (num) => {
     let sumSet = [];
     let usedIndex = {};
@@ -162,8 +173,9 @@ const findSumOfTwo = (num) => {
 
 console.log(findSumOfTwo([1, 2, 4, -5, 3, 6, 2, 22, 5, 10, -3, 9, -1]));
 
-
+```
 ## 🔟 Find Even and Odd Numbers
+```js
 const findEvOdd = (num) => {
     const even = [], odd = [];
 
@@ -184,8 +196,9 @@ const result = findEvOdd(numbers);
 console.log("Even:", result.even); // [2, 4, 6, 8, 10]
 console.log("Odd:", result.odd);   // [1, 3, 5, 7, 9]
 
-
+```
 ## 1️⃣1️⃣ Factorial of a Number
+```js
 const findFactorial = (num) => {
     if (num === 0 || num === 1) return 1;
     return num * findFactorial(num - 1);
@@ -193,8 +206,9 @@ const findFactorial = (num) => {
 
 console.log(findFactorial(5)); // Output: 120
 
-
+```
 ## 1️⃣2️⃣ Remove Duplicates from Array
+```js
 const removeDuplicate = (num) => {
     let seen = {};
     let result = [];
@@ -210,5 +224,5 @@ const removeDuplicate = (num) => {
 };
 
 console.log(removeDuplicate([1, 2, 3, 5, 3, 3, 2, 4, 2, 7])); // Output: [1, 2, 3, 5, 4, 7]
-
+```
 
