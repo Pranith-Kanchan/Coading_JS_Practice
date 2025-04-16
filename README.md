@@ -226,3 +226,175 @@ const removeDuplicate = (num) => {
 console.log(removeDuplicate([1, 2, 3, 5, 3, 3, 2, 4, 2, 7])); // Output: [1, 2, 3, 5, 4, 7]
 ```
 
+```js
+// ------------------------------------------- Custom Callback Function - Filter -----------------------
+
+const mapCustom = (arr, callback) => {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i, arr)) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+
+const numbers = [1, 2, 3, 4];
+const result = mapCustom(numbers, num => num % 2 === 0);
+console.log(result); // [2, 4]
+
+// ------------------------------------- Reverse Words in a Sentence -----------------------------------
+
+const reverse = (str) => {
+  return str.trim().split(/\s+/).reverse().join(' ');
+};
+
+console.log(reverse('My name is pranit kanchan')); // "kanchan pranit is name My"
+
+// ---------------------------------- First Letter of Each Word to Uppercase ---------------------------
+
+const firstCaps = (str) => {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.length > 2 ? word[0].toUpperCase() + word.slice(1) : word)
+    .join(' ');
+};
+
+console.log(firstCaps('pranith kanchan malpe')); // "Pranith Kanchan Malpe"
+
+// ------------------------------------------- Count the Vowels -----------------------------------------
+
+const countVowels = (str) => {
+  const vowels = 'aeiou';
+  let count = 0;
+
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      console.log(char); // Optional log
+      count++;
+    }
+  }
+
+  return count;
+};
+
+console.log(countVowels("Hello World")); // 3
+
+// ------------------------------------------- Rotate K Elements Left -----------------------------------
+
+const rotateArrayLeft = (arr, k) => {
+  const n = arr.length;
+  k = k % n;
+
+  let rotated = new Array(n);
+  for (let i = 0; i < n; i++) {
+    let newIndex = (i - k + n) % n;
+    rotated[newIndex] = arr[i];
+  }
+
+  return rotated;
+};
+
+console.log(rotateArrayLeft([1, 2, 3, 4, 5], 2)); // [3, 4, 5, 1, 2]
+
+// -------------------------------------- Check if Array is Sorted ---------------------------------------
+
+const isSortedDescending = (arr) => {
+  let ascending = true;
+  let descending = true;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > arr[i - 1]) ascending = false;
+    if (arr[i] < arr[i - 1]) descending = false;
+  }
+
+  return ascending || descending;
+};
+
+console.log(isSortedDescending([5, 4, 3, 2])); // true
+console.log(isSortedDescending([3, 4, 1]));   // false
+
+// --------------------------------------------- Debouncing ----------------------------------------------
+
+import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { useEffect, useState, useRef } from 'react';
+
+export default function App() {
+  const [query, setQuery] = useState('');
+  const [result, setResult] = useState('');
+  const timerRef = useRef(null);
+
+  const debounce = (fun, delay) => {
+    return (...arg) => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+
+      timerRef.current = setTimeout(() => {
+        fun(...arg);
+      }, delay);
+    };
+  };
+
+  const handleSearch = debounce((text) => {
+    setResult(`Resulted: ${text}`);
+  }, 500);
+
+  const handleChangeText = (text) => {
+    setQuery(text);
+    handleSearch(text); // Debounced search
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        value={query}
+        onChangeText={handleChangeText}
+        placeholder="Type something..."
+      />
+      <Text style={styles.result}>{result}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 100,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    flex: 1,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 5,
+  },
+  result: {
+    marginTop: 20,
+    fontSize: 18,
+    color: 'blue',
+  },
+});
+
+// -------------------------------------- Random Number Generator -----------------------------------------
+
+function generateRandomNumbers(count, min, max) {
+  const numbers = [];
+
+  for (let i = 0; i < count; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    numbers.push(randomNumber);
+  }
+
+  return numbers;
+}
+
+console.log(generateRandomNumbers(5, 10000, 99999));
+
+
+```
+
