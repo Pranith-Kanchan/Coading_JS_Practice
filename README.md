@@ -427,4 +427,29 @@ console.log(isPrime(7));  // Output: true
 console.log(isPrime(10)); // Output: false
 
 ```
+## Deep Comparision of two objects
+```js
 
+function deepEqual(a, b) {
+    
+if(a===b) return true;
+
+if( typeof a !=='object' || typeof b !=='object' || a ==null|| b==null){
+    return false
+    
+}
+
+let keyA = Object.keys(a);
+let keyB = Object.keys(b);
+
+for( let key of keyA){
+    
+    if(!keyB.includes(key) || !deepEqual(a[key],b[key])){
+        return false
+    }
+}
+
+return true
+
+}
+```
