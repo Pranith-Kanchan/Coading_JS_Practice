@@ -1,3 +1,4 @@
+
 # Coading_JS_Practice
 
 # 🚀 JavaScript Coding Questions for Practice
@@ -410,5 +411,20 @@ const fibo = (n) => {
 console.log(fibo(7));  // Output: [0, 1, 1, 2, 3, 5, 8]
 
 ```
+## Prime Numbers:
+```js
+const isPrime = (num) => {
+  if (num <= 1) return false; // 0 and 1 are not prime
+  for (let i = 2; i <= Math.sqrt(num); i++) {  // Only check divisors up to the square root of num
+    if (num % i === 0) {
+      return false;  // Found a divisor, so it's not prime
+    }
+  }
+  return true;  // No divisors found, it's prime
+};
 
+console.log(isPrime(7));  // Output: true
+console.log(isPrime(10)); // Output: false
+
+```
 
