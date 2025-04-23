@@ -225,10 +225,8 @@ const removeDuplicate = (num) => {
 
 console.log(removeDuplicate([1, 2, 3, 5, 3, 3, 2, 4, 2, 7])); // Output: [1, 2, 3, 5, 4, 7]
 ```
-
+## ------------------------------------------- Custom Callback Function - Filter -----------------------
 ```js
-// ------------------------------------------- Custom Callback Function - Filter -----------------------
-
 const mapCustom = (arr, callback) => {
   let result = [];
   for (let i = 0; i < arr.length; i++) {
@@ -250,9 +248,9 @@ const reverse = (str) => {
 };
 
 console.log(reverse('My name is pranit kanchan')); // "kanchan pranit is name My"
-
-// ---------------------------------- First Letter of Each Word to Uppercase ---------------------------
-
+```
+## ---------------------------------- First Letter of Each Word to Uppercase ---------------------------
+```js
 const firstCaps = (str) => {
   return str
     .toLowerCase()
@@ -262,9 +260,9 @@ const firstCaps = (str) => {
 };
 
 console.log(firstCaps('pranith kanchan malpe')); // "Pranith Kanchan Malpe"
-
-// ------------------------------------------- Count the Vowels -----------------------------------------
-
+```
+## ------------------------------------------- Count the Vowels -----------------------------------------
+```js
 const countVowels = (str) => {
   const vowels = 'aeiou';
   let count = 0;
@@ -280,9 +278,9 @@ const countVowels = (str) => {
 };
 
 console.log(countVowels("Hello World")); // 3
-
-// ------------------------------------------- Rotate K Elements Left -----------------------------------
-
+```
+## ------------------------------------------- Rotate K Elements Left -----------------------------------
+```js
 const rotateArrayLeft = (arr, k) => {
   const n = arr.length;
   k = k % n;
@@ -297,9 +295,9 @@ const rotateArrayLeft = (arr, k) => {
 };
 
 console.log(rotateArrayLeft([1, 2, 3, 4, 5], 2)); // [3, 4, 5, 1, 2]
-
-// -------------------------------------- Check if Array is Sorted ---------------------------------------
-
+```
+## -------------------------------------- Check if Array is Sorted ---------------------------------------
+```js
 const isSortedDescending = (arr) => {
   let ascending = true;
   let descending = true;
@@ -314,9 +312,9 @@ const isSortedDescending = (arr) => {
 
 console.log(isSortedDescending([5, 4, 3, 2])); // true
 console.log(isSortedDescending([3, 4, 1]));   // false
-
-// --------------------------------------------- Debouncing ----------------------------------------------
-
+```
+## --------------------------------------------- Debouncing ----------------------------------------------
+```js
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
 
@@ -379,9 +377,9 @@ const styles = StyleSheet.create({
     color: 'blue',
   },
 });
-
-// -------------------------------------- Random Number Generator -----------------------------------------
-
+```
+##  Random Number Generator 
+```js
 function generateRandomNumbers(count, min, max) {
   const numbers = [];
 
@@ -395,6 +393,22 @@ function generateRandomNumbers(count, min, max) {
 
 console.log(generateRandomNumbers(5, 10000, 99999));
 
+```
+## Fibonacci Function:
+```js
+
+const fibo = (n) => {
+    let fib = [0, 1];  // Start with [0, 1], the typical Fibonacci sequence
+
+    for (let i = 2; i < n; i++) {  // Start from the third element (index 2)
+        fib.push(fib[i - 1] + fib[i - 2]);  // Add the sum of the last two elements
+    }
+
+    return fib;
+};
+
+console.log(fibo(7));  // Output: [0, 1, 1, 2, 3, 5, 8]
 
 ```
+
 
