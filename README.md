@@ -411,8 +411,14 @@ function areAnagrams(str1, str2) {
 
   return true;
 }
+
+areAnagrams("listen", "silent")
+// Normalized: "listen" and "silent"
+// Frequency map from "listen": { l:1, i:1, s:1, t:1, e:1, n:1 }
+// Check "silent" against map → all counts match → ✅ true
+
 ```
-## --------------------------------------------- Debouncing ----------------------------------------------
+## --------- Debouncing ------------
 ```js
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
