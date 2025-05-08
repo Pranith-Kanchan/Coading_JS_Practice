@@ -226,7 +226,7 @@ const removeDuplicate = (num) => {
 
 console.log(removeDuplicate([1, 2, 3, 5, 3, 3, 2, 4, 2, 7])); // Output: [1, 2, 3, 5, 4, 7]
 ```
-## ------------------------------------------- Custom Callback Function - Filter -----------------------
+##  Custom Callback Function - Filter 
 ```js
 const mapCustom = (arr, callback) => {
   let result = [];
@@ -241,16 +241,15 @@ const mapCustom = (arr, callback) => {
 const numbers = [1, 2, 3, 4];
 const result = mapCustom(numbers, num => num % 2 === 0);
 console.log(result); // [2, 4]
-
-// ------------------------------------- Reverse Words in a Sentence -----------------------------------
-
+```
+###  Reverse Words in a Sentence 
+```js
 const reverse = (str) => {
   return str.trim().split(/\s+/).reverse().join(' ');
 };
-
 console.log(reverse('My name is pranit kanchan')); // "kanchan pranit is name My"
 ```
-## ---------------------------------- First Letter of Each Word to Uppercase ---------------------------
+##  First Letter of Each Word to Uppercase 
 ```js
 const firstCaps = (str) => {
   return str
@@ -262,7 +261,7 @@ const firstCaps = (str) => {
 
 console.log(firstCaps('pranith kanchan malpe')); // "Pranith Kanchan Malpe"
 ```
-## ------------------------------------------- Count the Vowels -----------------------------------------
+##  Count the Vowels
 ```js
 const countVowels = (str) => {
   const vowels = 'aeiou';
@@ -280,7 +279,7 @@ const countVowels = (str) => {
 
 console.log(countVowels("Hello World")); // 3
 ```
-## ------------------------------------------- Rotate K Elements Left -----------------------------------
+##  Rotate K Elements Left 
 ```js
 const rotateArrayLeft = (arr, k) => {
   const n = arr.length;
@@ -297,7 +296,7 @@ const rotateArrayLeft = (arr, k) => {
 
 console.log(rotateArrayLeft([1, 2, 3, 4, 5], 2)); // [3, 4, 5, 1, 2]
 ```
-## -------------------------------------- Check if Array is Sorted ---------------------------------------
+##  Check if Array is Sorted 
 ```js
 const isSortedDescending = (arr) => {
   let ascending = true;
