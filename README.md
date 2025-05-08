@@ -314,71 +314,6 @@ const isSortedDescending = (arr) => {
 console.log(isSortedDescending([5, 4, 3, 2])); // true
 console.log(isSortedDescending([3, 4, 1]));   // false
 ```
-## --------------------------------------------- Debouncing ----------------------------------------------
-```js
-import { View, TextInput, Text, StyleSheet } from 'react-native';
-import { useEffect, useState, useRef } from 'react';
-
-export default function App() {
-  const [query, setQuery] = useState('');
-  const [result, setResult] = useState('');
-  const timerRef = useRef(null);
-
-  const debounce = (fun, delay) => {
-    return (...arg) => {
-      if (timerRef.current) {
-        clearTimeout(timerRef.current);
-      }
-
-      timerRef.current = setTimeout(() => {
-        fun(...arg);
-      }, delay);
-    };
-  };
-
-  const handleSearch = debounce((text) => {
-    setResult(`Resulted: ${text}`);
-  }, 500);
-
-  const handleChangeText = (text) => {
-    setQuery(text);
-    handleSearch(text); // Debounced search
-  };
-
-  return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={query}
-        onChangeText={handleChangeText}
-        placeholder="Type something..."
-      />
-      <Text style={styles.result}>{result}</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 100,
-    paddingHorizontal: 20,
-    backgroundColor: '#fff',
-    flex: 1,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    fontSize: 18,
-    borderRadius: 5,
-  },
-  result: {
-    marginTop: 20,
-    fontSize: 18,
-    color: 'blue',
-  },
-});
-```
 ##  Random Number Generator 
 ```js
 function generateRandomNumbers(count, min, max) {
@@ -452,4 +387,94 @@ for( let key of keyA){
 return true
 
 }
+```
+## An anagram is a word 
+```js
+
+function areAnagrams(str1, str2) {
+  const normalize = str => str.replace(/\s/g, '').toLowerCase();
+
+  const s1 = normalize(str1);
+  const s2 = normalize(str2);
+
+  if (s1.length !== s2.length) return false;
+
+  const count = {};
+
+  for (let char of s1) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  for (let char of s2) {
+    if (!count[char]) return false;
+    count[char]--;
+  }
+
+  return true;
+}
+```
+## --------------------------------------------- Debouncing ----------------------------------------------
+```js
+import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { useEffect, useState, useRef } from 'react';
+
+export default function App() {
+  const [query, setQuery] = useState('');
+  const [result, setResult] = useState('');
+  const timerRef = useRef(null);
+
+  const debounce = (fun, delay) => {
+    return (...arg) => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+
+      timerRef.current = setTimeout(() => {
+        fun(...arg);
+      }, delay);
+    };
+  };
+
+  const handleSearch = debounce((text) => {
+    setResult(`Resulted: ${text}`);
+  }, 500);
+
+  const handleChangeText = (text) => {
+    setQuery(text);
+    handleSearch(text); // Debounced search
+  };
+
+  return (
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        value={query}
+        onChangeText={handleChangeText}
+        placeholder="Type something..."
+      />
+      <Text style={styles.result}>{result}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 100,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    flex: 1,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 5,
+  },
+  result: {
+    marginTop: 20,
+    fontSize: 18,
+    color: 'blue',
+  },
+});
 ```
